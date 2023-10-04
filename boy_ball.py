@@ -13,10 +13,11 @@ class Grass:
     def update(self):
         pass
 
+
 class SmallBall:
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 599
-        self.fast = random.randint(1,15)
+        self.fast = random.randint(1, 15)
         self.image = load_image('ball21x21.png')
 
     def update(self):
@@ -24,19 +25,26 @@ class SmallBall:
             self.y -= self.fast
         else:
             self.y = 60
+
     def draw(self):
         self.image.draw(self.x, self.y)
+
+
 class BigBall:
     def __init__(self):
         self.x, self.y = random.randint(100, 700), 599
-        self.fast = random.randint(1,10)
+        self.fast = random.randint(1, 10)
         self.image = load_image('ball41x41.png')
+
     def update(self):
-        if self.y > 60 :
+        if self.y > 60:
             self.y -= self.fast
-        else: self.y = 60
+        else:
+            self.y = 60
+
     def draw(self):
         self.image.draw(self.x, self.y)
+
 
 class Boy:
     def __init__(self):
@@ -80,6 +88,7 @@ def reset_world():
     world += team
     world += smallballs
     world += bigballs
+
 
 def update_world():
     for o in world:

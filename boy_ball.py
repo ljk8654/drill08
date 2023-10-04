@@ -52,13 +52,15 @@ def reset_world():
     global boy
     global team
     global world
+    global smallballs
     running = True
     world = []
     grass = Grass()
     world.append(grass)
+    smallballs = [SmallBall() for i in range(10)]
     team = [Boy() for i in range(11)]
     world += team
-
+    world += smallballs
 
 def update_world():
     for o in world:

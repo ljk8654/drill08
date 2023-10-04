@@ -13,6 +13,14 @@ class Grass:
     def update(self):
         pass
 
+class SmallBall:
+    def __init__(self):
+        self.x, self.y = random.randint(100, 700), 599
+        self.image = load_image('ball21x21.png')
+    def update(self):
+        self.y -= 5
+    def draw(self):
+        self.image.draw(self.x, self.y)
 
 class Boy:
     def __init__(self):
